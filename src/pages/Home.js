@@ -22,19 +22,16 @@ const Home = () => {
   const handleFileUpload = (e) => {
     const file = e.target.files[0]; // Get the first selected file
     if (file) {
-      const fileType = file.type;
-      const validAudioTypes = ['audio/mp3', 'audio/mpeg', 'audio/wav']; // Add more if needed
-  
-      // Check if the selected file is a valid audio file
-      if (validAudioTypes.includes(fileType)) {
+      // Check if the file type is MP3
+      if (file.type === "audio/mpeg" || file.type === "audio/mp3") {
         const objectURL = URL.createObjectURL(file); // Create a URL for the file
         setCurrentSong(objectURL); // Set the URL as the source for the player
         setSongName(file.name); // Display the file name
       } else {
-        alert('Please upload a valid MP3 or audio file'); // Show an alert for invalid files
+        alert("Please select an MP3 file."); // Notify user if the file is not MP3
       }
     }
-  };
+  }
   
 
   // Handle volume change
@@ -83,7 +80,7 @@ const Home = () => {
         <input 
           id="file-upload" 
           type="file" 
-          accept="audio/mp3*"  // Accept only audio files
+          accept="audio/mp3,audio/mpeg,audio/*"  // Accept only audio files
           onChange={handleFileUpload} 
         />
       </div>
