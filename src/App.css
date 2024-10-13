@@ -1,0 +1,104 @@
+/* Default dark mode styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #181818;  /* Dark background */
+  color: #fff;                /* White text */
+  line-height: 1.6;           /* Consistent line height */
+  padding: 0;
+  margin: 0;
+}
+
+/* Home container styling for dark mode */
+.home-container.dark {
+  background-color: #181818;
+  color: #fff;
+}
+
+/* Home container styling for light mode */
+.home-container.light {
+  background-color: #f0f0f0;  /* Light background */
+  color: #000;                /* Black text */
+}
+
+/* Song list styling with grid layout */
+.song-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 20px;                  /* Space between song cards */
+  margin-top: 20px;           /* Spacing from top */
+}
+
+/* Song card styling */
+.song-card {
+  background-color: #1e1e1e;  /* Dark card background */
+  padding: 20px;              /* Padding inside card */
+  border-radius: 10px;        /* Rounded corners */
+  transition: transform 0.2s ease;  /* Smooth hover effect */
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Song card styling for light mode */
+.song-card.light {
+  background-color: #fff;      /* Light card background */
+  color: #000;                 /* Black text */
+}
+
+/* Image inside the song card */
+.song-card img {
+  width: 100%;                /* Full width image */
+  border-radius: 5px;         /* Rounded image corners */
+  margin-bottom: 10px;        /* Space between image and text */
+}
+
+/* Hover effect for song card */
+.song-card:hover {
+  transform: translateY(-10px); /* Slight upward movement on hover */
+  background-color: #282828;    /* Darker background on hover */
+}
+
+/* Player container at the bottom of the page */
+.player-container {
+  background-color: #282828;  /* Dark background for player */
+  padding: 20px;
+  display: flex;
+  justify-content: center;    /* Center the player horizontally */
+  align-items: center;        /* Center the player vertically */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;                /* Full width */
+  max-width: 100%;            /* Ensure it doesn't exceed 100% width */
+  height: 80px;               /* Set height for player bar */
+  z-index: 1000;              /* Make sure player is always on top */
+  /* padding-right: 30px; */
+}
+
+/* Player container styling for light mode */
+.home-container.light .player-container {
+  background-color: #e0e0e0;  /* Light background */
+  color: #000;                /* Black text */
+}
+
+/* Styling for file input field */
+.file-input {
+  margin-bottom: 20px;        /* Space below the input field */
+}
+
+input[type="file"] {
+  margin-top: 10px;
+  padding: 5px;               /* Padding for file input */
+}
+
+/* Styling for the Now Playing title */
+h3 {
+  color: #1DB954;             /* Spotify-like green for the current song */
+}
+
+/* Audio player styling within the player container */
+.player-container audio {
+  width: 90%;
+  padding-right: 38px;
+  max-width: 500px;           /* Restrict the width of the player */
+  margin-top: 20px;
+}
